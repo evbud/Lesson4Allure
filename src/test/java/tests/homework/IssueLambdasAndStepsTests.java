@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Feature("Работа с задачами")
-public class IssueLambdasAndStepsTest {
+public class IssueLambdasAndStepsTests {
 
     private static final String BASE_URL = "https://github.com";
     private static final String LOGIN = "photoeb";
@@ -22,7 +22,7 @@ public class IssueLambdasAndStepsTest {
     private final IssueSteps steps = new IssueSteps();
 
     @AfterEach
-    public void unAuthorize() {
+    public void logout() {
         $(".js-feature-preview-indicator-container").click();
         $(".dropdown-signout").click();
         //$(byText("Sign out")).click();
@@ -31,9 +31,9 @@ public class IssueLambdasAndStepsTest {
     @Test
     @DisplayName("Пользователь должен иметь возможность создать новую задачу(лямбды)")
     void createIssueWithLambdasTest() {
-        step("Открываем главную страницу", () -> {
-            open(BASE_URL);
-        });
+        step("Открываем главную страницу", () ->
+            open(BASE_URL));
+        
         step("Ищем пользователя", () -> {
             $(byName("q")).setValue("photoeb").pressEnter();
         });
@@ -53,12 +53,12 @@ public class IssueLambdasAndStepsTest {
 
         step("Выполняем авторизацию", () -> {
             $(".px-4" ).$(byText("Sign in")).click();
-            $(byId("login_field")).setValue(LOGIN);
-            $(byId("password")).setValue(PASSWORD).pressEnter();
+            $("#login_field").setValue(LOGIN);
+            $("#password").setValue(PASSWORD).pressEnter();
         });
 
         step("Создаём новую задачу с заданным названием", () -> {
-            $(byId("issue_title")).setValue("Hello!");
+            $("#issue_title").setValue("Hello!");
             $(byText("Submit new issue")).click();
         });
 
@@ -74,12 +74,14 @@ public class IssueLambdasAndStepsTest {
     @DisplayName("Пользователь должен иметь возможность создать новую задачу(шаги)")
     void createIssueWithSteps() {
         steps.openMainPage();
+        
         steps.searchForUsername();
         steps.openRepository();
         steps.openIssuesPage();
         steps.clickNewIssue();
         steps.performAuthorization();
         steps.createNewIssue();
+        
         steps.shouldHaveIssueWithTitle();
     }
 }
