@@ -14,7 +14,9 @@ public class IssueSteps {
     private static final String PASSWORD = "";
 
     @Step("Открываем главную страницу")
-    public void openMainPage() { open(BASE_URL); }
+    public void openMainPage() {
+        open(BASE_URL);
+    }
 
     @Step("Ищем пользователя, выводим результаты поиска по пользователям и кликаем по найденному пользователю")
     public void searchForUsername() {
@@ -26,7 +28,7 @@ public class IssueSteps {
     @Step("Переходим на страницу репозитория 'Lesson4Allure'")
     public void openRepository() {$(byText("Lesson4Allure")).click(); }
 
-    @Step("Открываем страницу с задачами ")
+    @Step("Открываем страницу с задачами")
     public void openIssuesPage() { $(byText("Issues")).click(); }
 
     @Step("Нажимаем кнопку 'Создать новую задачу'")

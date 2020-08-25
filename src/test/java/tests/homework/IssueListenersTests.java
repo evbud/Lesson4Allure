@@ -30,21 +30,21 @@ class IssueListenersTests {
     @Test
     @DisplayName("Пользователь должен иметь возможность создать новую задачу")
     void createIssueTest() {
-    open(BASE_URL);
+        open(BASE_URL);
 
-    $(byName("q")).setValue("photoeb").pressEnter();
-    $(byText("Users")).click();
-    $(".user-list .text-gray").click();
-    $(byText("Lesson4Allure")).click();
-    $(byText("Issues")).click();
-    $(byText("New issue")).click();
-    $(".px-4" ).$(byText("Sign in")).click();
-    $(byId("login_field")).setValue(LOGIN);
-    $(byId("password")).setValue(PASSWORD).pressEnter();
-    $(byId("issue_title")).setValue("Hello!");
-    $(byText("Submit new issue")).click();
+        $(byName("q")).setValue("photoeb").pressEnter();
+        $(byText("Users")).click();
+        $(".user-list .text-gray").click();
+        $(byText("Lesson4Allure")).click();
+        $(byText("Issues")).click();
+        $(byText("New issue")).click();
+        $(".px-4" ).$(byText("Sign in")).click();
+        $("#login_field").setValue(LOGIN);
+        $("#password").setValue(PASSWORD).pressEnter();
+        $("#issue_title").setValue("Hello!");
+        $(byText("Submit new issue")).click();
 
-    $(".js-issue-title").shouldHave(text("Hello!"));
+        $(".js-issue-title").shouldHave(text("Hello!"));
     //.js-issue-assignees
     //.js-issue-labels
     }

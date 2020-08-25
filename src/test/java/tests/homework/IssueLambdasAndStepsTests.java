@@ -64,7 +64,6 @@ public class IssueLambdasAndStepsTests {
 
         step("Проверяем результат создания задачи по заданному названию", () -> {
             $(".js-issue-title").shouldHave(text("Hello!"));
-
         });
         //.js-issue-assignees
         //.js-issue-labels

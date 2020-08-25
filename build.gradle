@@ -10,6 +10,21 @@ repositories {
     mavenCentral()
 }
 
+allure {
+    autoconfigure = true
+    version = '2.13.5'
+
+    useJUnit5() {
+        version = '2.13.5'
+    }
+}
+
+sourceCompatibility = 1.8
+
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     compile("io.qameta.allure:allure-java-commons:2.13.5")
     compile("io.qameta.allure:allure-rest-assured:2.13.5")
@@ -28,17 +43,3 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-allure {
-    autoconfigure = true
-    version = '2.13.5'
-
-    useJUnit5() {
-        version = '2.13.5'
-    }
-}
-
-sourceCompatibility = 1.8
-
-test {
-    useJUnitPlatform()
-}
