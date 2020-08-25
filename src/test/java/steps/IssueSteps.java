@@ -37,8 +37,8 @@ public class IssueSteps {
     @Step("Выполняем авторизацию")
     public void performAuthorization() {
         $(".px-4" ).$(byText("Sign in")).click();
-        $(byId("login_field")).setValue(LOGIN);
-        $(byId("password")).setValue(PASSWORD).pressEnter();
+        $("#login_field").setValue(LOGIN);
+        $("#password").setValue(PASSWORD).pressEnter();
     }
 
     @Step("Создаём новую задачу с заданным названием")
