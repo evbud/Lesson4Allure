@@ -43,7 +43,7 @@ public class IssueSteps {
 
     @Step("Создаём новую задачу с заданным названием")
     public void createNewIssue() {
-        $(byId("issue_title")).setValue("Hello!");
+        $("#issue_title").setValue("Hello!");
         $(byText("Submit new issue")).click();
     }
 
