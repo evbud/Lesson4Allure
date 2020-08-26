@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 public class IssueLambdasAndStepsTests {
 
     private static final String BASE_URL = "https://github.com";
-    private static final String LOGIN = "photoeb";
+    private static final String LOGIN = "evbud";
     private static final String PASSWORD = "";
 
     private final IssueSteps steps = new IssueSteps();
@@ -35,7 +35,7 @@ public class IssueLambdasAndStepsTests {
             open(BASE_URL));
         
         step("Ищем пользователя", () -> {
-            $(byName("q")).setValue("photoeb").pressEnter();
+            $(byName("q")).setValue("evbud").pressEnter();
         });
         step("Выводим результаты поиска по пользователям и кликаем по найденному пользователю", () -> {
             $(byText("Users")).click();

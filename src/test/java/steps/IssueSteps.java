@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class IssueSteps {
 
     private static final String BASE_URL = "https://github.com";
-    private static final String LOGIN = "photoeb";
+    private static final String LOGIN = "evbud";
     private static final String PASSWORD = "";
 
     @Step("Открываем главную страницу")
@@ -20,7 +20,7 @@ public class IssueSteps {
 
     @Step("Ищем пользователя, выводим результаты поиска по пользователям и кликаем по найденному пользователю")
     public void searchForUsername() {
-        $(byName("q")).setValue("photoeb").pressEnter();
+        $(byName("q")).setValue("evbud").pressEnter();
         $(byText("Users")).click();
         $(".user-list .text-gray").click();
     }

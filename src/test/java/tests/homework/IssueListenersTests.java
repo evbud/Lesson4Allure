@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 class IssueListenersTests {
 
     private static final String BASE_URL = "https://github.com";
-    private static final String LOGIN = "photoeb";
+    private static final String LOGIN = "evbud";
     private static final String PASSWORD = "";
 
 
@@ -32,7 +32,7 @@ class IssueListenersTests {
     void createIssueTest() {
         open(BASE_URL);
 
-        $(byName("q")).setValue("photoeb").pressEnter();
+        $(byName("q")).setValue("evbud").pressEnter();
         $(byText("Users")).click();
         $(".user-list .text-gray").click();
         $(byText("Lesson4Allure")).click();
